@@ -60,13 +60,38 @@ const { developmentChains, networkConfig } = require("../../helper-hardhat-confi
               })
           })
           describe("checkUpkeep", async function () {
-            // yarn hardhat test --grep "returns false if people haven't sent any ETH"  
-            it("returns false if people haven't sent any ETH", async function () {
+              // yarn hardhat test --grep "returns false if people haven't sent any ETH"
+              it("returns false if people haven't sent any ETH", async function () {
                   await network.provider.send("evm_increaseTime", [interval.toNumber() + 1])
                   await network.provider.send("evm_mine", [])
                   // simulate sending transaction:
-                  const { upkeepNeeded } = await raffle.callStatic.checkUpkeep( [] )
+                  const { upkeepNeeded } = await raffle.callStatic.checkUpkeep([])
                   assert(!upkeepNeeded)
+              })
+              // yarn hardhat test --grep "returns false if raffle isn't open"
+              it("returns false if raffle isn't open", async function () {
+                  await raffle.enterRaffle({ value: raffleEntranceFee })
+                  await network.provider.send("evm_increaseTime", [interval.toNumber() + 1])
+                  await network.provider.send("evm_mine", [])
+                  await raffle.performUpkeep("0x")
+                  const raffleState = await raffle.getRaffleState()
+                  const { upkeepNeeded } = await raffle.callStatic.checkUpkeep([])
+                  assert.equal(raffleState.toString(), "1")
+                  assert.equal(upkeepNeeded, false)
+              })
+              it("returns false if enough time hasn't passed", async () => {
+                  await raffle.enterRaffle({ value: raffleEntranceFee })
+                  await network.provider.send("evm_increaseTime", [interval.toNumber() - 5]) // use a higher number here if this test fails
+                  await network.provider.request({ method: "evm_mine", params: [] })
+                  const { upkeepNeeded } = await raffle.callStatic.checkUpkeep("0x") // upkeepNeeded = (timePassed && isOpen && hasBalance && hasPlayers)
+                  assert(!upkeepNeeded)
+              })
+              it("returns true if enough time has passed, has players, eth, and is open", async () => {
+                  await raffle.enterRaffle({ value: raffleEntranceFee })
+                  await network.provider.send("evm_increaseTime", [interval.toNumber() + 1])
+                  await network.provider.request({ method: "evm_mine", params: [] })
+                  const { upkeepNeeded } = await raffle.callStatic.checkUpkeep("0x") // upkeepNeeded = (timePassed && isOpen && hasBalance && hasPlayers)
+                  assert(upkeepNeeded)
               })
           })
       })
