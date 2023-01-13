@@ -59,4 +59,14 @@ const { developmentChains, networkConfig } = require("../../helper-hardhat-confi
                   )
               })
           })
+          describe("checkUpkeep", async function () {
+            // yarn hardhat test --grep "returns false if people haven't sent any ETH"  
+            it("returns false if people haven't sent any ETH", async function () {
+                  await network.provider.send("evm_increaseTime", [interval.toNumber() + 1])
+                  await network.provider.send("evm_mine", [])
+                  // simulate sending transaction:
+                  const { upkeepNeeded } = await raffle.callStatic.checkUpkeep( [] )
+                  assert(!upkeepNeeded)
+              })
+          })
       })
