@@ -1,11 +1,12 @@
 const { assert } = require("chai")
 const { getNamedAccounts, deployments, ethers } = require("hardhat")
-const {developmentChains} = require("../../helper-hardhat-config")
+const {developmentChains, networkConfig} = require("../../helper-hardhat-config")
 
 !developmentChains.includes(network.name) 
     ? describe.skip 
     : describe("Raffle Unit Tests", async function () {
-        let raffle, VRFCoordinatorV2Mock
+        let raffle, VRFCoordinatorV2Mock, interval
+        const chainId = network.config.chainId
 
         beforeEach(async function (){
             const {deployer} = await getNamedAccounts()
@@ -18,8 +19,9 @@ const {developmentChains} = require("../../helper-hardhat-config")
             it("initializes the raffle correctly", async function(){
                 // Ideally we make our test have just 1 assert per it()
                 const raffleState = await raffle.getRaffleState()
-                const interval = await interval.getInterval
+                const interval = await raffle.getInterval()
                 assert.equal(raffleState.toString(), "0")
+                assert.equal(interval.toString(), networkConfig[chainId]["interval"])
             })
         })
     })
