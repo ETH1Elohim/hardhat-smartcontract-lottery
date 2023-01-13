@@ -4,7 +4,7 @@ const { developmentChains, networkConfig } = require("../../helper-hardhat-confi
 
 !developmentChains.includes(network.name)
     ? describe.skip
-    : describe("Raffle Unit Tests", async function () {
+    : describe("Raffle Unit Tests", function () {
           let raffle, VRFCoordinatorV2Mock, interval, raffleEntranceFee, deployer
           const chainId = network.config.chainId
 
@@ -17,7 +17,7 @@ const { developmentChains, networkConfig } = require("../../helper-hardhat-confi
               interval = await raffle.getInterval()
           })
 
-          describe("constructor", async function () {
+          describe("constructor", function () {
               it("initializes the raffle correctly", async function () {
                   // Ideally we make our test have just 1 assert per it()
                   const raffleState = await raffle.getRaffleState()
@@ -27,7 +27,7 @@ const { developmentChains, networkConfig } = require("../../helper-hardhat-confi
               })
           })
 
-          describe("enterRaffle", async function () {
+          describe("enterRaffle", function () {
               //  yarn hardhat test --grep "you don't pay enough"
               it("reverts when you don't pay enough", async function () {
                   await expect(raffle.enterRaffle()).to.be.revertedWith(
@@ -59,7 +59,7 @@ const { developmentChains, networkConfig } = require("../../helper-hardhat-confi
                   )
               })
           })
-          describe("checkUpkeep", async function () {
+          describe("checkUpkeep", function () {
               // yarn hardhat test --grep "returns false if people haven't sent any ETH"
               it("returns false if people haven't sent any ETH", async function () {
                   await network.provider.send("evm_increaseTime", [interval.toNumber() + 1])
