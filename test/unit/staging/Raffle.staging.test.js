@@ -2,6 +2,10 @@ const { assert, expect } = require("chai")
 const { getNamedAccounts, deployments, ethers, network } = require("hardhat")
 const { developmentChains, networkConfig } = require("../../../helper-hardhat-config")
 
+
+//  yarn hardhat test --network goerli
+// https://goerli.etherscan.io/address/0x838A4871AF8554B384F2Dd8775ff2569119A394e
+// currently exceeding timeout of 500000ms - looks like a common problem
 developmentChains.includes(network.name)
     ? describe.skip
     : describe("Raffle Unit Tests", function () {
