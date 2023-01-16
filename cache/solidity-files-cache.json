@@ -6,7 +6,7 @@
       "contentHash": "2b99ac2f4650a231290abe127daa8249",
       "sourceName": "contracts/Raffle.sol",
       "solcConfig": {
-        "version": "0.8.17",
+        "version": "0.8.7",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -52,7 +52,7 @@
       "contentHash": "eb9cc526ef59dfc4d644f56ddca0633a",
       "sourceName": "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol",
       "solcConfig": {
-        "version": "0.8.17",
+        "version": "0.8.7",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -94,7 +94,7 @@
       "contentHash": "56ec852a2aeddf81bf5a5720a7fc6a63",
       "sourceName": "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol",
       "solcConfig": {
-        "version": "0.8.17",
+        "version": "0.8.7",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -136,7 +136,7 @@
       "contentHash": "bdbf3e274e50272d9c830fa414fcbec9",
       "sourceName": "@chainlink/contracts/src/v0.8/interfaces/KeeperCompatibleInterface.sol",
       "solcConfig": {
-        "version": "0.8.17",
+        "version": "0.8.7",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -178,7 +178,7 @@
       "contentHash": "0e99ed258a59dc48bc432008b39453cd",
       "sourceName": "@chainlink/contracts/src/v0.8/mocks/VRFCoordinatorV2Mock.sol",
       "solcConfig": {
-        "version": "0.8.17",
+        "version": "0.8.7",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -224,7 +224,7 @@
       "contentHash": "da5a0c3bd86c896f6a407f909c57edf3",
       "sourceName": "@chainlink/contracts/src/v0.8/interfaces/LinkTokenInterface.sol",
       "solcConfig": {
-        "version": "0.8.17",
+        "version": "0.8.7",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -266,7 +266,7 @@
       "contentHash": "22bc41bedd8bfa4a6e4bba0790bd51fd",
       "sourceName": "contracts/test/VRFCoordinatorV2Mock.sol",
       "solcConfig": {
-        "version": "0.8.17",
+        "version": "0.8.7",
         "settings": {
           "optimizer": {
             "enabled": false,
