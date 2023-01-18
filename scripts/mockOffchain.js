@@ -1,4 +1,6 @@
 const { ethers, network } = require("hardhat")
+require("dotenv").config()
+
 
 async function mockKeepers() {
     const raffle = await ethers.getContract("Raffle")
