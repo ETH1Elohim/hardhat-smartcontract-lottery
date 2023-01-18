@@ -48,8 +48,8 @@
       ]
     },
     "/home/ethan1elohim/hardhat-smartcontract-lottery/node_modules/@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol": {
-      "lastModificationDate": 1673904814732,
-      "contentHash": "8c9ed3426b676f67ee200a2bec96e224",
+      "lastModificationDate": 1674002782570,
+      "contentHash": "56ec852a2aeddf81bf5a5720a7fc6a63",
       "sourceName": "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol",
       "solcConfig": {
         "version": "0.8.7",
@@ -90,8 +90,8 @@
       ]
     },
     "/home/ethan1elohim/hardhat-smartcontract-lottery/node_modules/@chainlink/contracts/src/v0.8/interfaces/KeeperCompatibleInterface.sol": {
-      "lastModificationDate": 1673904814732,
-      "contentHash": "fc398ecdfc4d9dd8ebb15889e8d61f20",
+      "lastModificationDate": 1674002782570,
+      "contentHash": "bdbf3e274e50272d9c830fa414fcbec9",
       "sourceName": "@chainlink/contracts/src/v0.8/interfaces/KeeperCompatibleInterface.sol",
       "solcConfig": {
         "version": "0.8.7",
@@ -123,13 +123,13 @@
           }
         }
       },
-      "imports": [
-        "./AutomationCompatibleInterface.sol"
-      ],
+      "imports": [],
       "versionPragmas": [
         "^0.8.0"
       ],
-      "artifacts": []
+      "artifacts": [
+        "KeeperCompatibleInterface"
+      ]
     },
     "/home/ethan1elohim/hardhat-smartcontract-lottery/node_modules/@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol": {
       "lastModificationDate": 1673904814602,
@@ -173,51 +173,9 @@
         "VRFConsumerBaseV2"
       ]
     },
-    "/home/ethan1elohim/hardhat-smartcontract-lottery/node_modules/@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol": {
-      "lastModificationDate": 1673904814732,
-      "contentHash": "c52969cee392918edbf23f914e01c0dc",
-      "sourceName": "@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol",
-      "solcConfig": {
-        "version": "0.8.7",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "AutomationCompatibleInterface"
-      ]
-    },
     "/home/ethan1elohim/hardhat-smartcontract-lottery/node_modules/@chainlink/contracts/src/v0.8/mocks/VRFCoordinatorV2Mock.sol": {
-      "lastModificationDate": 1673904814732,
-      "contentHash": "a78f72f6c18077e727bc06d7f96b2031",
+      "lastModificationDate": 1674002782570,
+      "contentHash": "0e99ed258a59dc48bc432008b39453cd",
       "sourceName": "@chainlink/contracts/src/v0.8/mocks/VRFCoordinatorV2Mock.sol",
       "solcConfig": {
         "version": "0.8.7",
